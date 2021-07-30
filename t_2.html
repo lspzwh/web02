@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        display: flex;
+        padding: 0px;
+    }
+    .left{
+        border: #323e4a;
+        border-style: solid;
+        border-width: 1px;
+        display: flex;
+        flex: 1;
+        flex-flow: column;
+        background-color: #1e2933;
+        color: white;
+        min-width: 160px;
+    }
+    .rignt{
+        border: #323e4a;
+        border-style: solid;
+        border-width: 1px;
+        background-color: white;
+        display: flex;
+        flex-flow: column;
+        background-color: white;
+    }
+    .logo{
+        display: flex;
+        align-items:center ;
+        justify-content:center;
+        font-size: 16px;
+        height: 65px;
+    }
+    .user{
+        border: #323e4a;
+        border-style: solid;
+        border-width: 1px;
+        display: flex;
+        flex-flow: row;
+        height: 85px;
+        align-items: center;
+    }
+    .userpic{
+        display: flex;
+        height: 35px;
+        width: 35px;
+        padding: 0px;
+        margin-left: 25px;
+    }
+    .usertext{
+        display: flex;
+        align-content: center;
+        justify-items: center;
+        flex-flow: column;
+        margin-left: 5px;
+    }
+    .lefttool{
+        padding-top: 10px;
+        display: flex;
+        flex-flow: column;
+        border: #323e4a;
+        border-style: solid;
+        border-width: 1px;
+    }
+    .tool{
+        display: flex;
+        flex-flow: column;
+        margin-top: 10px;
+    }
+    .tooltxt{
+        margin-left: 25px;
+        font-size: 12px;
+        height: 35px;
+    }
+    .toolitem{
+        height: 40px;
+        display: flex;
+        flex-flow: row;
+        align-content: center;
+    }
+    .toolitempic{
+        display: flex;
+        margin-left: 25px;
+        padding: 0px;
+    }
+    .toolitemtext{
+        display: flex;
+        margin-left: 5px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    .shead{
+        background-color: white;
+        display: flex;      
+        height: 65px;   
+        align-items: center;
+        border: #323e4a;
+        border-style: solid;
+        border-width: 1px;
+        padding-left: 35px;
+    }
+    .search{
+        background-color: white;
+        border-radius: 5px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        color: #9ba4b0;
+        border: #9ba4b0;
+        border-style: solid;
+        border-width: 1px;
+        width: 800px;
+    }
+    .charttop{
+        height: 48px;
+        display: flex;
+        border: #9ba4b0;
+        border-style: solid;
+        border-width: 1px;
+    }
+    .topleft{
+        background-color: white;
+        height: 48px;
+        min-height: 48px;
+        display: flex;
+        width: 340px;
+        border-right: 1px solid #9ba4b0;
+        border-bottom: 1px solid #9ba4b0;
+        align-items: center;
+    }
+    .topright{
+        background-color: white;
+        height: 48px;
+        min-height: 48px;
+        display: flex;
+        min-width: 400px;
+        align-items: center;
+        border-bottom: 1px solid #9ba4b0 ;
+    }
+    .toppic{
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        margin-left: 300px;
+        min-width: 350px;
+        margin-right: 20px;
+    }
+    .mainchart{
+        display: flex;
+        border: #323e4a;
+        border-style: solid;
+        border-width: 1px;
+        background-color: white;
+    }
+    .list{
+        display: flex;
+        flex-flow: column;
+        background-color: white;
+    }
+    .listitem{
+        display: flex;
+        height: 110px;
+        align-items: center;
+        border-right:1px solid #9ba4b0 ;      
+        padding-left: 35px;
+        padding-right: 35px;
+        background-color: white;  
+    }
+    .listitemtext{
+        display: flex;
+        flex-flow: column;
+        margin-left: 10px;
+        width: 165px;
+        background-color: white;
+    }
+    .itemuptext{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+    }
+    .itemdowntext{
+        font-size: 14;
+        color: #51606d;
+        display: -webkit-box;
+        text-overflow:ellipsis;
+        overflow:hidden;      
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        max-width: 165px;
+        background-color: white;
+    }
+    .chart{
+        position: relative;
+        display: flex;
+        flex-flow: column;
+    }
+    .bottom{
+        background-color: white;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        border-top: 1px solid #9ba4b0 ;
+        position: absolute;
+        bottom: 0px;
+    }
+    .bottompic{
+        display: flex;
+        justify-content: space-around;
+        margin-left: 500px;
+        min-width: 125px;
+        align-items: center;
+    }
+    .talk{
+        background-color: #f8fafd;
+        height: 100%;
+        width: 100%;
+    }
+    .lefttalk{
+        display: flex;
+        flex-flow: column;
+        min-width: 360px;
+        
+        width: 300px;
+        margin-left: 35px;
+    }
+    .leftup{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    .upleft{
+        display: flex;
+        align-items: center;
+        width: 100px;
+        justify-content: space-between;
+    }
+    .leftdowm{
+        padding: 10px;
+        font-size: 14;
+        color: white;
+        display: -webkit-box;
+        -webkit-box-orient:vertical;
+        max-width: 420px;
+        background-color: #5965db;
+        border-radius: 2px;
+    }
+    .rignttalk{
+        display: flex;
+        flex-flow: column;
+        
+        align-items: flex-end;
+        
+        min-width: 360px;
+        margin-right: 10px;
+    }
+    .rigntdown{
+        padding: 10px;
+        font-size: 14;
+        color: #51606d;
+        display: -webkit-box;
+        -webkit-box-orient:vertical;
+        max-width: 420px;
+        background-color: #eaeff4;
+        border-radius: 2px;
+    }
+
+</style>
+<body>
+<div class="main">   
+    <div class="left">
+        <div class="logo">LOGO示例</div>
+        <div class="user">
+            <div class="userpic"><img src="2_image\Oval.png" height="35px" width="35px"></div>
+            <div class="usertext">
+                <div style="font-size: 15px;">名称示例</div>
+                <div style="font-size: 12px;">职位示例</div>
+            </div>
+        </div>
+        <div class="lefttool">
+            <div class="tool">
+                <div class="tooltxt">菜单</div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\layout-dashboard.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">仪表盘</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\single-neutral-circle.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">用户列表</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\content-paper-edit.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">文件</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\conversation-chat-1.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">聊天</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\briefcase.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">项目</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\calendar.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">日程表</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\credit-card-1.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">支付方式</div>
+                </div>
+            </div>
+
+            <div class="tool">
+                <div class="tooltxt">帮助</div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\question-circle.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">需要帮助</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\email-action-unread.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">联系我们</div>
+                </div>
+            </div>
+            <div class="tool">
+                <div class="tooltxt">设置</div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\calendar.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">账号设置</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\weather-night-clear.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">深色模式</div>
+                </div>
+                <div class="toolitem">
+                    <div class="toolitempic">
+                        <img src="2_image\logout-1.png" height="14px" width="14px">
+                    </div>
+                    <div class="toolitemtext">退出</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="shead">
+            <div class="search">
+                <div class="toolitempic">
+                    <img src="2_image\Search Icon.png" height="14px" width="14px">
+                </div>
+                <div class="toolitemtext">请输入关键字</div>
+            </div>
+            <img src="2_image\Language.png" height="36px" width="140px" style="margin-left: 100px;padding: 0px;">
+        </div>
+        <!-- <div class="charttop">
+            
+            <div class="topright">
+                <p style="margin-left: 35px; font-size: 14px; color: #323e4a;white-space: nowrap; ">新用户列表</p>
+                <div class="toppic">
+                    <img src="2_image\1.png" width="22px" height="22px"style="padding: 0px;" >
+                    <img src="2_image\2.png" width="22px" height="22px"style="padding: 0px;" >
+                    <img src="2_image\3.png" width="22px" height="22px"style="padding: 0px;" >
+                    <img src="2_image\4.png" width="22px" height="22px"style="padding: 0px;" >
+                    <img src="2_image\Add Icon.png" width="22px" height="22px"style="padding: 0px;" >
+                    <img src="2_image\Divider Line.png" width="2px" height="22px"style="padding: 0px;" >
+                    <img src="2_image\meeting-camera.png" width="28px" height="22px"style="padding: 0px;" >
+                    <img src="2_image\alarm-bell.png" width="22px" height="22px"style="padding: 0px;" >
+                    <img src="2_image\cog2.png" width="22px" height="22px"style="padding: 0px;" >
+                </div>
+            </div>
+        </div> -->
+        <div class="mainchart">
+            <div class="list">
+                <div class="topleft">
+                    <p style="margin-left: 35px; font-size: 14px; color: #323e4a;white-space: nowrap;">用户列表</p>
+                    <p style="margin-left: 125px; font-size: 10px; color: #5965db; background-color: #ebedfb; justify-items: center;padding: 5px 20px; border-radius: 5px;white-space: nowrap;">新消息</p>
+                </div>
+                <div class="listitem">
+                    <img src="2_image\Avatars.png" width="60px" height="60px">
+                    <div class="listitemtext">
+                        <div class="itemuptext">
+                            <p style="font-size: 15px; color: #323e4a;display: flex;">名称示例</p>
+                            <p style="font-size: 12px; color: #8d97a5;display: flex;">4:01PM</p>
+                        </div>
+                        <div class="itemdowntext">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+                    </div>
+                </div>
+                <div class="listitem">
+                    <img src="2_image\Avatars2.png" width="60px" height="60px">
+                    <div class="listitemtext">
+                        <div class="itemuptext">
+                            <p style="font-size: 15px; color: #323e4a;display: flex;">名称示例</p>
+                            <p style="font-size: 12px; color: #8d97a5;display: flex;">昨天</p>
+                        </div>
+                        <div class="itemdowntext">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+                    </div>
+                </div>
+                <div class="listitem">
+                    <img src="2_image\Avatars3.png" width="60px" height="60px">
+                    <div class="listitemtext">
+                        <div class="itemuptext">
+                            <p style="font-size: 15px; color: #323e4a;display: flex;">名称示例</p>
+                            <p style="font-size: 12px; color: #8d97a5;display: flex;">5天前</p>
+                        </div>
+                        <div class="itemdowntext">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+                    </div>
+                </div>
+                <div class="listitem">
+                    <img src="2_image\Avatars4.png" width="60px" height="60px">
+                    <div class="listitemtext">
+                        <div class="itemuptext">
+                            <p style="font-size: 15px; color: #323e4a;display: flex;">名称示例</p>
+                            <p style="font-size: 12px; color: #8d97a5;display: flex;">4:01PM</p>
+                        </div>
+                        <div class="itemdowntext">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+                    </div>
+                </div>
+                <div class="listitem">
+                    <img src="2_image\Avatars5.png" width="60px" height="60px">
+                    <div class="listitemtext">
+                        <div class="itemuptext">
+                            <p style="font-size: 15px; color: #323e4a;display: flex;">名称示例</p>
+                            <p style="font-size: 12px; color: #8d97a5;display: flex;">4:01PM</p>
+                        </div>
+                        <div class="itemdowntext">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+                    </div>
+                </div>
+                <div class="listitem">
+                    <img src="2_image\Avatars6.png" width="60px" height="60px">
+                    <div class="listitemtext">
+                        <div class="itemuptext">
+                            <p style="font-size: 15px; color: #323e4a;display: flex;">名称示例</p>
+                            <p style="font-size: 12px; color: #8d97a5;display: flex;">1周前</p>
+                        </div>
+                        <div class="itemdowntext">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+                    </div>
+                </div>
+                <div class="listitem">
+                    <img src="2_image\Avatars7.png" width="60px" height="60px">
+                    <div class="listitemtext">
+                        <div class="itemuptext">
+                            <p style="font-size: 15px; color: #323e4a;display: flex;">名称示例</p>
+                            <p style="font-size: 12px; color: #8d97a5;display: flex;">4:01PM</p>
+                        </div>
+                        <div class="itemdowntext">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+                    </div>
+                </div>
+                <div class="listitem">
+                    <img src="2_image\Avatars8.png" width="60px" height="60px">
+                    <div class="listitemtext">
+                        <div class="itemuptext">
+                            <p style="font-size: 15px; color: #323e4a;display: flex;">名称示例</p>
+                            <p style="font-size: 12px; color: #8d97a5;display: flex;">4:01PM</p>
+                        </div>
+                        <div class="itemdowntext">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart">
+                <div class="topright">
+                    <p style="margin-left: 35px; font-size: 14px; color: #323e4a;white-space: nowrap; ">新用户列表</p>
+                    <div class="toppic">
+                        <img src="2_image\1.png" width="22px" height="22px"style="padding: 0px;" >
+                        <img src="2_image\2.png" width="22px" height="22px"style="padding: 0px;" >
+                        <img src="2_image\3.png" width="22px" height="22px"style="padding: 0px;" >
+                        <img src="2_image\4.png" width="22px" height="22px"style="padding: 0px;" >
+                        <img src="2_image\Add Icon.png" width="22px" height="22px"style="padding: 0px;" >
+                        <img src="2_image\Divider Line.png" width="2px" height="22px"style="padding: 0px;" >
+                        <img src="2_image\meeting-camera.png" width="28px" height="22px"style="padding: 0px;" >
+                        <img src="2_image\alarm-bell.png" width="22px" height="22px"style="padding: 0px;" >
+                        <img src="2_image\cog2.png" width="22px" height="22px"style="padding: 0px;" >
+                    </div>
+                </div>
+                <div class="talk">
+                    <div class="lefttalk">
+                        <div class="leftup">
+                            <div class="upleft">
+                                <img src="2_image\1.png" height="22px" width="22px" style="padding: 0px;">
+                                <p style="font-size: 14px; color:#323e4a; white-space: nowrap;">名称示例</p>
+                            </div>
+                            <div style="color: #8d97a5; font-size: 12px; white-space: nowrap;display: flex;">9:52PM</div>
+                        </div>
+                        <div class="leftdowm">阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴</div>
+                    </div>
+                    <div class="rignttalk">
+                        <p style="color: #8d97a5; font-size: 12px; white-space: nowrap;">11:08AM</p>
+                        <div class="rigntdown">阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴</div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <p style="font-size: 14px; color: #9ba4b0; margin-left: 35px; align-items: center;display: flex;">请输入文字</p>
+                    <div class="bottompic">
+                        <img src="2_image\Picture Icon.png" width="16px" height="16px" style="padding: 0px;">
+                        <img src="2_image\Attachment Icon.png" width="16px" height="16px" style="padding: 0px;">
+                        <img src="2_image\Emoji Icon.png" width="16px" height="16px" style="padding: 0px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+</body>
+</html>
